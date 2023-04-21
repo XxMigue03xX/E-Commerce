@@ -21,6 +21,10 @@ nav {
 }
 nav img {
   height: 55px;
+  transition: 0.5s;
+}
+nav img:hover {
+  transform: scale(1.2);
 }
 nav button {
   background-color: transparent;
@@ -136,9 +140,11 @@ main h3 {
 }
 .cart_button:hover {
   transform: translateY(-3px);
+  background-color: coral;
 }
 .product_details:hover {
   transform: translateY(-3px);
+  background-color: lightseagreen
 }
 .cart_product_image {
   display: flex;
