@@ -1,4 +1,4 @@
-// //! npm run dev
+//! npm run dev
 //* URL Base
 const baseUrl = "https://ecommercebackend.fundamentos-29.repl.co/";
 //* Mostrar y ocultar carrito
@@ -11,7 +11,7 @@ const cart = document.querySelector('#cart');
 const cartList = document.querySelector('#cart_list');
 //* Vaciar carrito
 emptyCartButton = document.querySelector('#empty_cart')
-//? Necesito tener un array que reciba los elementos que debo introducir en el carrito de compras.
+//? Array que reciba los elementos que debo introducir en el carrito de compras
 let cartProducts = [];
 //* Modal
 const modalContainer = document.querySelector('#modal-container');
@@ -22,8 +22,8 @@ cartToggle.addEventListener('click', () => {
   cartBlock.classList.toggle("nav_cart_visible")
   //* Alterna entre poner y quitar la clase
 })
-//! Vamos a crear una función que contenga y que ejecute todos los Listeners al inicio de la carga del código.
-eventListenersLoader()
+//! Listeners deben cargar al inicio
+eventListenersLoader();
 function eventListenersLoader() {
   //* Cuando se presione el botón "Add to cart"
   productsList.addEventListener('click', addProduct)
@@ -44,14 +44,14 @@ function eventListenersLoader() {
 function getProducts() {
   axios.get(baseUrl)
     .then(function (response){
-      const products = response.data
-      printProducts(products)
+      const products = response.data;
+      printProducts(products);
     })
     .catch(function(error){
-      console.log(error)
+      console.log(error);
     })
 }
-getProducts()
+getProducts();
 function printProducts(products){
   let html = '';
   for(let i = 0; i < products.length; i++){
@@ -69,6 +69,13 @@ function printProducts(products){
       <div class="product_container_button">
         <button class="cart_button add_to_cart" id="add_to_cart" data-id="${products[i].id}">Add to cart</button>
         <button class="product_details" data-id="${products[i].id}">View Details</button>
+      </div>
+      <div class="stars">
+        <i class="fa-solid fa-star" style="color: #fff700;"></i>
+        <i class="fa-solid fa-star" style="color: #fff700;"></i>
+        <i class="fa-solid fa-star" style="color: #fff700;"></i>
+        <i class="fa-solid fa-star" style="color: #fff700;"></i>
+        <i class="fa-solid fa-star" style="color: #fff700;"></i>
       </div>
     </div>
     `

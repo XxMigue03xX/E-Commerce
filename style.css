@@ -146,6 +146,15 @@ main h3 {
   transform: translateY(-3px);
   background-color: lightseagreen
 }
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: 0.5s;
+}
+.stars:hover {
+  transform: scale(1.4);
+}
 .cart_product_image {
   display: flex;
   justify-content: center;
